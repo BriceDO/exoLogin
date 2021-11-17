@@ -10,6 +10,7 @@
 
 
 	<h1>Veuillez vous authentifier</h1>
+	<p>Pour tester l'authentification : nom = brice, mpd = mdp</p>
 	<form method="POST" action="login">
 
 		Entrez votre username 		

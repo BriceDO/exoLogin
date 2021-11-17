@@ -24,7 +24,6 @@ public class FormationDetails extends HttpServlet {
 	
     public FormationDetails() {}
 
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// récupère la formation passé en paramètre de l'URL grâce à son titre
 		// grâce à getFormationByName
@@ -37,12 +36,11 @@ public class FormationDetails extends HttpServlet {
 		}
 		
 		request.setAttribute("formations", form);
-		
 		request.getRequestDispatcher("/WEB-INF/formation_details.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		doGet(request, response);
 	}
 

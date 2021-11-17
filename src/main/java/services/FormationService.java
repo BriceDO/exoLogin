@@ -7,7 +7,8 @@ import models.Eleve;
 import models.Formation;
 
 /**
- * Pour créer une liste de formation
+ * Pour créer une liste de formation et d'élèves
+ * Cela va éviter de faire passer les informations par la session HTTP
  * @author brice
  *
  */
@@ -31,7 +32,9 @@ public class FormationService {
 		}
 		
 		// Création de 10 élèves à mettre dans la liste
-
+		for (int i = 1; i <= 10; i++) {
+			eleves.add(new Eleve("nom"+i, "prenom"+i, 15, 19, formations.get(1)));
+		}
 	}
 
 	// méthode static pour récupérer l'instance de ma classe
@@ -42,12 +45,17 @@ public class FormationService {
 		return instance;
 	}
 	
-	// Méthode qui renvoi le tableau des formations
+	// Méthode qui renvoi la liste des eleves
+	public List<Eleve> getEleves() {
+		return this.eleves; 
+	}
+	
+	// Méthode qui renvoi la liste des formations
 	public List<Formation> getFormations() {
 		return this.formations; 
 	}
 	
-	// Méthode qui permet de récupèrer un article selon son nom
+	// Méthode qui permet de récupèrer un article par son nom
 		public Formation getFormationByTitre(String titre) {
 			Formation response = null;
 			for (Formation form : formations) {
@@ -57,5 +65,17 @@ public class FormationService {
 				}
 			}
 			return response;
+	}
+		
+	// Méthode qui permet de récupèrer un eleve par son nom
+	public Eleve getEleveByNom(String nom) {
+		Eleve response = null;
+		for (Eleve el : eleves) {
+			if (el.getNom().equals(nom)) {
+				response = el;
+				break;
+			}
 		}
+		return response;
+	}
 }
