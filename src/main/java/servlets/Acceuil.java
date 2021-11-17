@@ -10,25 +10,27 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import models.User;
 
-
 /**
- * Servlet implementation class Login
+ * Servlet implementation class Acceuil
  */
-@WebServlet("/login")
-public class Login extends HttpServlet {
+@WebServlet("/acceuil")
+public class Acceuil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public Login() {}
+    public Acceuil() {
+        // TODO Auto-generated constructor stub
+    }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		User utilisateur = new User("brice", "mdp");
-		
+
+
 		HttpSession session = request.getSession();
-		session.setAttribute("USER", utilisateur);
-		
-		request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+
+		User utilisateur = (User) session.getAttribute("USER");
+
+		request.setAttribute("user", utilisateur);
+
+		request.getRequestDispatcher("/WEB-INF/acceuil.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
