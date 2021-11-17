@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="/Workspace2/ExoLogin/src/main/webapp/WEB-INF/css/global.css" />
 <title>Acceuil</title>
 </head>
 <body>
