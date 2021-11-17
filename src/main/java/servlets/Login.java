@@ -32,8 +32,6 @@ public class Login extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("hello ici");
-		
 		String name = request.getParameter("name");
 		String mdp = request.getParameter("mdp");
 		
