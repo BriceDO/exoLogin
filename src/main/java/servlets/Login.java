@@ -22,7 +22,6 @@ public class Login extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
 		User utilisateur = new User("brice", "mdp");
 		
 		HttpSession session = request.getSession();
@@ -32,8 +31,20 @@ public class Login extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		System.out.println("hello ici");
+		
+		String name = request.getParameter("name");
+		String mdp = request.getParameter("mdp");
+		
+		// Vérification authentification
+		if(name.equals("brice") && mdp.equals("mdp")) {
+			response.sendRedirect(request.getContextPath() + "/acceuil");
+		} else {
+			response.sendRedirect(request.getContextPath() + "/login");
+		}
+		
+		//doGet(request, response);
 	}
 
 }

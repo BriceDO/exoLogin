@@ -7,16 +7,22 @@
 <title>Page Login</title>
 </head>
 <body>
+
+
 	<h1>Veuillez vous authentifier</h1>
-	<form action="acceuil">
+	<form method="POST" action="login">
 
 		Entrez votre username 		
-		<input type="text" name="un"/><br>		
+		<input type="text" name="name"/><br>		
 	
 		Entrez votre mot de passe
-		<input type="text" name="pw"/><br>
+		<input type="password" name="mdp"/><br>
 		
 		<input type="submit" value="submit">			
 	
 	</form>
+	
+	<%  %>
+	<p>
+	
 </html>

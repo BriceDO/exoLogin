@@ -6,16 +6,20 @@ public class Eleve {
 
 	String nom;
 	String prenom;
-	String age;
+	int age;
 	int note;
 	Formation formation;
 	
-	public Eleve(String nom, String prenom, String age, int note, List<Formation> fomations) {
+	public Eleve(String nom, String prenom, int age, int note, Formation formation) {
 		this.setNom(nom);
 		this.setPrenom(prenom);
 		this.setAge(age);
 		this.setNote(note);
 		this.setFormation(formation);
+	}
+
+	public void setAge(int age) {
+		this.age = age;
 	}
 
 	public String getNom() {
@@ -34,12 +38,8 @@ public class Eleve {
 		this.prenom = prenom;
 	}
 
-	public String getAge() {
+	public int getAge() {
 		return age;
-	}
-
-	public void setAge(String age) {
-		this.age = age;
 	}
 
 	public int getNote() {
